@@ -40,14 +40,50 @@
  * 
  */
 
-// 1. Declaration //
-var myName; // variable declared but not assigned a value
-console.log(myName); // prints => undefined
+// Scope
+function testVarScope() {
+    if (true) {
+        var x = 10;
+    }
+    console.log(x); // ✅ 10 (available out the code block)
+}
 
-// 2. Initialization or Assignment //
-myName = 'John';
-console.log(myName); // prints => john
+function testLetScope() {
+    if (true) {
+        let x = 10;
+    }
+    console.log(x); // ❌ ReferenceError: x is not defined
+}
 
-// 3. Reassignment //
-myName = 'bob';
-console.log(myName); // prints => bob
+// Hoisting
+function testVarHoisting() {
+    console.log(x); // ✅ undefined
+    var x = 10;
+}
+
+function testLetHoisting() {
+    console.log(y); // ❌ ReferenceError: Cannot access 'y' before initialization
+    let y = 10;
+}
+
+
+// Redeclaration and Reassignment//
+function testVar() {
+    var x = 10;
+    var x = 20; // ✅ No error
+    console.log(x); // 20
+} // x is allowed to be redeclared and reassigned
+
+function testLet() {
+    let y = 10;
+    let y = 20; // ❌ SyntaxError: Identifier 'y' has already been declared
+    console.log(y); // 10
+    y = 20; // ✅ no error
+    console.log(y); // 20
+} // y is NOT allowed to be redeclared but it can be reassigned
+
+function testConst() {
+    const z = 50;
+    const z = 30; // ❌ SyntaxError: Identifier 'z' has already been declared
+    z = 30; // ❌ TypeError: Assignment to constant variable.
+}
