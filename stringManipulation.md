@@ -1,11 +1,7 @@
 <!--- 
 LIST OF REQUIREMENTS
-assignment operators
-arithmetic operators
-comparison operators
-logical operators
-unitary operators
-ternary operators ( a ? b : c)
+with operators
+with string methods
  --->
 # Topic
 <!--- introduction --->

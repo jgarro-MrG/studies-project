@@ -1,11 +1,9 @@
 <!--- 
 LIST OF REQUIREMENTS
-assignment operators
-arithmetic operators
-comparison operators
-logical operators
-unitary operators
-ternary operators ( a ? b : c)
+if
+else-if
+else
+switch
  --->
 # Topic
 <!--- introduction --->
@@ -16,7 +14,7 @@ Some comment to introduce the concept
 Definition of the concept
 
 #### Implementation
-Explanation of how the concept is inmplemented in JavaScript
+Explanation of how the concept is implemented in JavaScript
 
 ### Examples
 ```js
