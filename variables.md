@@ -4,10 +4,25 @@ To hold things in memory during the life cycle of our program, we can create var
 
 [comment]: <> (Explanation)
 ### Definition
-Variables are named identifiers that can point to  values of a particular type, like a Number, String, Array, Object, or another datatype. Variables are called so because we can change the value--and type of value--to which they point.
+Variables are like labeled containers that hold information, or values, in a program. Think of them as giving a name to a piece of data so you can easily refer to it and work with it later. They allow your program to remember things and change them as needed.
 
 ### Implementation
-There are two phases of using variables: declaration and initialization (or assignment). There are different options to declaring variables in Javascript. The var keyword was the original (old) way of declaring variables. With the ES6 update the let and const keywords were introduced to eplace var to primarily address issues with hoisting and lack of block scope
+In JavaScript, you declare variables using keywords: var, let, and const. var is the oldest way and has some quirks regarding its scope (where it's accessible). let was introduced later and provides more predictable scoping rules. const is used for variables whose values should not be reassigned after they are initially set.
+
+```js
+// Using var (older, function-scoped)
+var message = "Hello";
+message = "World"; // You can reassign var
+
+// Using let (block-scoped)
+let counter = 0;
+counter = counter + 1; // You can reassign let
+
+// Using const (block-scoped, cannot be reassigned)
+const PI = 3.14159;
+// PI = 3.14; // This would cause an error
+```
+
 
 The following table details the differences between var, let and const
 |               |```var```  | ```let``` | ```const```| 

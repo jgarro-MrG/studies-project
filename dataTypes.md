@@ -5,82 +5,90 @@
 
 <!--- explanation --->
 ### Definition
-Data is composed of binary digits, or bits. A typical modern computer has more than 100 billion bits in its memory. To be able to work with such quantities of bits without gettin glost, we separate them into chunks that represet pieces of information. In a JavaScript environment, those chunks are called **values**. Every value has a type that determines its role.
+Data types categorize the different kinds of values that variables can hold. They tell the JavaScript engine how to interpret and work with the data. 
 
+JavaScript has several fundamental data types. 
+- **Number** represents numeric values, including integers and floating-point numbers. 
 
-## Simple and Complex Data Types
-<!--- 
-What is the difference between primitive/simple and complex data types?
-Priomitive values are passed to a function BY COPY, complex values are BY REFERENCE. WHat does that mean, and how they are different?
- --->
- Numbers, Booleans, and strings are the atoms from which data structures are built. Many types of information require more than one atom, though. Objects allow us to group values—including other objects—to build more complex structures.
+- **String** represents sequences of characters used for text. Boolean represents logical values, either true or false. 
 
-## Number
-In computing, **floating-point numbers** are a way to represent real numbers (numbers with decimal points) in a computer's memory, unlike integers which are whole numbers. 
+- **Array** is an ordered collection of items. 
 
-In JavaScript, numbers are implemented in [double-precision 64-bit binary format IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) (i.e., a number between ±2^−1022 and ±2^+1023, or about ±10^−308 to ±10^+308, with a numeric precision of 53 bits). Integer values up to ±2^53 − 1 can be represented exactly.
+- **Object** is a collection of key-value pairs, used to represent more complex entities. Function is a block of reusable code. 
 
-Values of ```number``` type are basically, representations of any numeric value.
-```js 
-13 // represents the numeric value of 13
-9.81 // represents a fractional number
-```
-Scientific notaion can be used to represent very big or very small numbers
-```js
-2.998e8 // That’s 2.998 × 10^8 = 299,800,000. 
-625e-3 // That’s 625 x 10^-3 = 0.625
-```
-You can represent numbers in a different base
-```js
-0b10 // bianry representation of the decimal 2
-0o10 // octal representation of the decimal 8
-0x10 // hexadecimal representation of the decimal 16
-```
-In addition to being able to represent **floating-point numbers**, the number type has three symbolic values: `Infinity`, `-Infinity`, and `NaN` (not-a-number).
-```js
-const maxNumber = Math.pow(10, 1000); // 10 elevated to the 1000th power (Max positive number)
-console.log(maxNumber); // Expected output: Infinity
-```
-JavaScript is not natively capable of handling complex numbers, math operation where the result is not a real number (e.g. the square root of a negative number) will evaluate to `NaN`.
-```js
-console.log(Math.sqrt(-1)); // Expected output: NaN
-```
-There are other operations that produce `NaN` values, which will be discussed later. 
+- **Undefined** represents a variable that has been declared but has not yet been assigned a value. 
 
-## String
-A string is a sequence of characters used to represent text. It is a set of "elements" of 16-bit unsigned integer values (UTF-16 code units). Each element in the String occupies a position in the String. The first element is at index 0, the next at index 1, and so on. The length of a String is the number of elements in it. Strings are written by enclosing their content in quotes.
-```js
-`Down on the sea`
-"Lie on the ocean"
-'Float on the ocean'
-```
-You can use single quotes, double quotes, or backticks to mark strings, as long as the quotes at the start and the end of the string match.
+- **Null** represents the intentional absence of a value. 
 
-## Boolean
+- **NaN** (Not-a-Number) is a special numeric value indicating that an operation that should have returned a number did not. 
 
-## Array
-JavaScript provides a data type specifically for storing sequences of values. It is called an `array` and is written as a list of values between square brackets, separated by commas.
+- **Infinity** and **-Infinity** are special numeric values representing positive and negative infinity, often resulting from division by zero.
+
+Data types are often categorized as Simple (Primitive) and Complex (Reference).
+
+- **Simple data types** (number, string, boolean, null, undefined) are immutable and are copied by value, meaning when you assign a simple data type variable to another, you create a completely independent copy. 
+
+- **Complex data types** (object, array, function) are mutable and are copied by reference, meaning when you assign a complex data type variable, you are essentially creating another reference to the same underlying data in memory; changes to one reference will affect the others.
 
 ```js
-let listOfNumbers = [2, 3, 5, 7, 11];
-console.log(listOfNumbers[2]); // → 5
-console.log(listOfNumbers[0]); // → 2
-console.log(listOfNumbers[2 - 1]); // → 3
+// Number
+let age = 30;
+let price = 99.99;
+let notANumber = NaN;
+let infiniteValue = Infinity;
+
+// String
+let name = "Alice";
+let message = 'Hello!';
+
+// Boolean
+let isTrue = true;
+let isFalse = false;
+
+// Array
+let numbers = [1, 2, 3, 4, 5];
+let fruits = ["apple", "banana", "cherry"];
+
+// Object
+let person = { name: "Bob", age: 25 };
+let car = { make: "Toyota", model: "Camry" };
+
+// Function
+function greet(personName) {
+  return "Hello, " + personName + "!";
+}
+let sayHello = greet; // Assigning the function to a variable
+
+// Undefined
+let city; // Declared but not assigned
+console.log(city); // Output: undefined
+
+// Null
+let emptyValue = null;
+
+// Copy by Value (Simple Types)
+let num1 = 10;
+let num2 = num1; // num2 gets a copy of the value of num1
+num2 = 20;
+console.log(num1); // Output: 10 (num1 is unchanged)
+console.log(num2); // Output: 20
+
+let str1 = "hello";
+let str2 = str1;
+str2 = "world";
+console.log(str1); // Output: hello
+console.log(str2); // Output: world
+
+// Copy by Reference (Complex Types)
+let arr1 = [1, 2, 3];
+let arr2 = arr1; // arr2 gets a reference to the same array as arr1
+arr2.push(4);
+console.log(arr1); // Output: [1, 2, 3, 4] (arr1 is changed because arr2 references the same array)
+console.log(arr2); // Output: [1, 2, 3, 4]
+
+let obj1 = { a: 1 };
+let obj2 = obj1;
+obj2.b = 2;
+console.log(obj1); // Output: { a: 1, b: 2 } (obj1 is changed)
+console.log(obj2); // Output: { a: 1, b: 2 }
 ```
-The notation for getting at the elements inside an array also uses square brackets. A pair of square brackets immediately after an expression, with another expression inside of them, will look up the element in the left-hand expression that corresponds to the index given by the expression in the brackets.
-
-The first index of an array is zero, not one, so the first element is retrieved with `listOfNumbers[0]`. Zero-based counting has a long tradition in technology and in certain ways makes a lot of sense, but it takes some getting used to. Think of the index as the number of items to skip, counting from the start of the array.
-
-## Object
-Values of the type object are arbitrary collections of properties.
-
-## Function
-
-
-## undefined
-
-
-## null
-
-
-## NaN
