@@ -1,6 +1,6 @@
 # Controls Flow
 <!--- introduction --->
-Some comment to introduce the concept
+> "Control flow: the subtle hand guiding the program's journey, where logic dances with possibility."
 
 <!--- explanation --->
 #### Definition

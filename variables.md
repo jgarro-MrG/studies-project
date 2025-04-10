@@ -1,6 +1,6 @@
 # Variables
 [comment]: <> (Introduction)
-To hold things in memory during the life cycle of our program, we can create variables.
+> "Variables: the vessels of data, holding the ever-shifting truths that shape our computational realities."
 
 [comment]: <> (Explanation)
 ### Definition

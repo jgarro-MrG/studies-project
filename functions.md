@@ -1,4 +1,6 @@
 # Functions
+> "Functions: the artisan's tools, each honed to perform a specific craft within the grand creation of software."
+
 <!--- introduction --->
 Functions are reusable blocks of code that perform a specific task. They are fundamental building blocks in JavaScript, allowing you to organize your code, make it more modular, and avoid repetition.
 

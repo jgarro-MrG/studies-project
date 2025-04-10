@@ -1,6 +1,6 @@
 # Loops
 <!--- introduction --->
-Some comment to introduce the concept
+> "Loops: automating the mundane, freeing us from the tyranny of repetition, and gifting us time for the truly human."
 
 <!--- explanation --->
 #### Definition

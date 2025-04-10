@@ -1,6 +1,6 @@
 # Operators
 <!--- introduction --->
-
+> "Operators: the verbs of code, enacting the transformations that breathe life into data."
 
 <!--- explanation --->
 #### Definition

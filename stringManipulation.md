@@ -1,6 +1,6 @@
 # String Manipulation
 <!--- introduction --->
-Some comment to introduce the concept
+> "String manipulation: where text transforms, revealing the hidden patterns within the data's narrative."
 
 <!--- explanation --->
 #### Definition
